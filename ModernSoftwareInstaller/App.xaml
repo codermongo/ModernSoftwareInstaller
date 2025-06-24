@@ -1,0 +1,59 @@
+﻿<Application x:Class="ModernSoftwareInstaller.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             StartupUri="MainWindow.xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources />
+                <ui:XamlControlsResources />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <Color x:Key="AppAccentColor">#9D00FF</Color>
+           
+            <Color x:Key="AppAccentMidColor">#582688</Color>
+           
+            <Color x:Key="AppAccentLightColor">#A647FF</Color>
+
+            <Color x:Key="AppUltraDark">#070505</Color>
+
+            <Color x:Key="AppPrimaryBackground">#0a0a0a</Color>
+
+            <Color x:Key="AppSurfaceColor">#050505</Color>
+
+
+
+            <SolidColorBrush x:Key="CustomBackgroundBrush"
+                 Color="{StaticResource AppPrimaryBackground}"/>
+
+            <SolidColorBrush x:Key="CustomSurfaceBrush"
+                 Color="{StaticResource AppSurfaceColor}"/>
+
+            <SolidColorBrush x:Key="CustomAccentBrush"
+                 Color="{StaticResource AppAccentColor}"/>
+
+            <SolidColorBrush x:Key="CustomAccentMidBrush"
+                 Color="{StaticResource AppAccentMidColor}"/>
+
+            <SolidColorBrush x:Key="CustomAccentLightBrush"
+                 Color="{StaticResource AppAccentLightColor}"/>
+
+            <SolidColorBrush x:Key="CustomTextBrush" Color="#FFFFFFFF"/>
+            <SolidColorBrush x:Key="CustomTextSecondaryBrush" Color="#B3B3B3"/>
+
+
+<SolidColorBrush x:Key="SystemAccentColorBrush"
+                 Color="{StaticResource AppAccentColor}"/>
+
+<SolidColorBrush x:Key="SystemControlBackgroundBrush"
+                 Color="{StaticResource AppPrimaryBackground}"/>
+
+<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush"
+                 Color="{StaticResource AppSurfaceColor}"/>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

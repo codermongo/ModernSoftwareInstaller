@@ -1,0 +1,153 @@
+﻿<Window x:Class="ModernSoftwareInstaller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="Modern Software Installer"
+        Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource CustomBackgroundBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" Background="{StaticResource CustomAccentBrush}" Padding="20">
+            <TextBlock Text="🚀 Modern Software Installer"
+                       FontSize="24" FontWeight="Bold"
+                       Foreground="White" HorizontalAlignment="Center"/>
+        </Border>
+
+
+        <Border Grid.Row="1" Background="{StaticResource CustomSurfaceBrush}" Padding="10,5">
+            <ui:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="15">
+                <Button x:Name="btnInstallTab" Content="📦 Installation" Click="InstallTab_Click"
+                        Background="{StaticResource CustomAccentBrush}" Foreground="White" Padding="15,8"/>
+                <Button x:Name="btnUpdateTab" Content="🔄 Updates" Click="UpdateTab_Click"
+                        Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}" Padding="15,8"/>
+                <Button x:Name="btnUninstallTab" Content="🗑️ Deinstallation" Click="UninstallTab_Click"
+                        Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}" Padding="15,8"/>
+                <Button x:Name="btnPrereqTab" Content="⚙️ Prerequisites" Click="PrereqTab_Click"
+                        Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}" Padding="15,8"/>
+            </ui:SimpleStackPanel>
+        </Border>
+
+
+        <Grid Grid.Row="2">
+
+            <ScrollViewer x:Name="InstallContent" VerticalScrollBarVisibility="Auto" 
+                         HorizontalScrollBarVisibility="Disabled" Padding="20">
+                <WrapPanel Orientation="Horizontal" ItemWidth="280" Margin="0">
+
+                    <Expander Header="🎮 Gaming Stores" IsExpanded="True" Margin="10"
+                             Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}">
+                        <ui:SimpleStackPanel Spacing="8" Margin="15">
+                            <CheckBox x:Name="chkEpic" Content="Epic Games Launcher" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkSteam" Content="Steam" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkEA" Content="EA App" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkUbisoft" Content="Ubisoft Connect" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkBattlenet" Content="Battle.net" Foreground="{StaticResource CustomTextBrush}"/>
+                        </ui:SimpleStackPanel>
+                    </Expander>
+
+
+                    <Expander Header="🌐 Web Browser" IsExpanded="True" Margin="10"
+                             Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}">
+                        <ui:SimpleStackPanel Spacing="8" Margin="15">
+                            <CheckBox x:Name="chkChrome" Content="Google Chrome" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkFirefox" Content="Mozilla Firefox" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkBrave" Content="Brave Browser" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkEdge" Content="Microsoft Edge" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkOpera" Content="Opera" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkLibreWolf" Content="LibreWolf" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkTor" Content="Tor Browser" Foreground="{StaticResource CustomTextBrush}"/>
+                        </ui:SimpleStackPanel>
+                    </Expander>
+
+
+                    <Expander Header="🖥️ Grafiktreiber" IsExpanded="False" Margin="10"
+                             Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}">
+                        <ui:SimpleStackPanel Spacing="8" Margin="15">
+                            <CheckBox x:Name="chkIntel" Content="Intel Graphics Driver" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkAMD" Content="AMD Software" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkNvidia" Content="NVIDIA GeForce Experience" Foreground="{StaticResource CustomTextBrush}"/>
+                        </ui:SimpleStackPanel>
+                    </Expander>
+
+
+                    <Expander Header="💻 Software &amp; Tools" IsExpanded="True" Margin="10"
+                             Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}">
+                        <ui:SimpleStackPanel Spacing="8" Margin="15">
+                            <CheckBox x:Name="chkVSCode" Content="Visual Studio Code" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkDiscord" Content="Discord" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkLively" Content="Lively Wallpaper" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkCrystalDisk" Content="CrystalDiskMark" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkOBS" Content="OBS Studio" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkWinRAR" Content="WinRAR" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkProtonVPN" Content="ProtonVPN" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkWireGuard" Content="WireGuard" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkSpotify" Content="Spotify" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkNotepadPlus" Content="Notepad++" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkVisualStudio" Content="Visual Studio Community" Foreground="{StaticResource CustomTextBrush}"/>
+                            <CheckBox x:Name="chkPyCharm" Content="PyCharm Community" Foreground="{StaticResource CustomTextBrush}"/>
+                        </ui:SimpleStackPanel>
+                    </Expander>
+                </WrapPanel>
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="UpdateContent" Visibility="Collapsed" Padding="20">
+                <ui:SimpleStackPanel Spacing="15">
+                    <TextBlock Text="📦 Verfügbare Updates" FontSize="18" FontWeight="Bold" 
+                              Foreground="{StaticResource CustomTextBrush}"/>
+                    <Button Content="🔍 Updates suchen" Click="CheckUpdates_Click" 
+                           Background="{StaticResource CustomAccentBrush}" Foreground="White" Padding="15,10"/>
+                    <ListView x:Name="UpdatesList" Background="{StaticResource CustomSurfaceBrush}" 
+                             Foreground="{StaticResource CustomTextBrush}" Height="400"/>
+                </ui:SimpleStackPanel>
+            </ScrollViewer>
+
+
+            <ScrollViewer x:Name="UninstallContent" Visibility="Collapsed" Padding="20">
+                <ui:SimpleStackPanel Spacing="15">
+                    <TextBlock Text="🗑️ Installierte Programme" FontSize="18" FontWeight="Bold" 
+                              Foreground="{StaticResource CustomTextBrush}"/>
+                    <Button Content="🔍 Programme laden" Click="LoadInstalledPrograms_Click" 
+                           Background="{StaticResource CustomAccentBrush}" Foreground="White" Padding="15,10"/>
+                    <ListView x:Name="InstalledList" Background="{StaticResource CustomSurfaceBrush}" 
+                             Foreground="{StaticResource CustomTextBrush}" Height="400"/>
+                </ui:SimpleStackPanel>
+            </ScrollViewer>
+
+
+            <ScrollViewer x:Name="PrereqContent" Visibility="Collapsed" Padding="20">
+                <ui:SimpleStackPanel Spacing="15">
+                    <TextBlock Text="⚙️ System-Voraussetzungen" FontSize="18" FontWeight="Bold" 
+                              Foreground="{StaticResource CustomTextBrush}"/>
+                    <Button Content="🔍 System prüfen" Click="CheckPrerequisites_Click" 
+                           Background="{StaticResource CustomAccentBrush}" Foreground="White" Padding="15,10"/>
+                    <TextBlock x:Name="PrereqStatus" Text="Klicken Sie auf 'System prüfen' um zu beginnen..." 
+                              Foreground="{StaticResource CustomTextSecondaryBrush}" TextWrapping="Wrap"/>
+                </ui:SimpleStackPanel>
+            </ScrollViewer>
+        </Grid>
+
+
+        <Border Grid.Row="3" Background="{StaticResource CustomSurfaceBrush}" Padding="20">
+            <ui:SimpleStackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="15">
+                <Button Content="✅ Alle auswählen" Click="SelectAll_Click" 
+                       Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}" Padding="15,10"/>
+                <Button Content="❌ Auswahl aufheben" Click="DeselectAll_Click" 
+                       Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}" Padding="15,10"/>
+                <Button Content="💾 Profil exportieren" Click="ExportProfile_Click" 
+                       Background="{StaticResource CustomSurfaceBrush}" Foreground="{StaticResource CustomTextBrush}" Padding="15,10"/>
+                <Button Content="🚀 Installation starten" Click="StartInstallation_Click" 
+                       Background="{StaticResource CustomAccentBrush}" Foreground="White" Padding="20,10" FontWeight="Bold"/>
+            </ui:SimpleStackPanel>
+        </Border>
+    </Grid>
+</Window>
