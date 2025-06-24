@@ -2,6 +2,9 @@
 
 A Windows software installer with WinGet integration and a modern user interface.
 
+![image](https://github.com/user-attachments/assets/b1481853-8651-44a5-a41d-1e4e174e04ec)
+
+
 ## Features
 
 **Installation**
